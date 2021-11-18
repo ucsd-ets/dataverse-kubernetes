@@ -36,10 +36,13 @@ spec:
             - name: index
               containerPort: 8983
           volumeMounts:
-            - name: data
+            - name: home
               mountPath: /opt/solr/server/solr/collection1/data
+              subPath: 234/solr-data
             - name: schema
               mountPath: /schema
+            - name: logs
+              mountPath: /opt/solr/server/logs
           env:
             - name: SOLR_PORT  # Otherwise, this is wrongfully set by K8s.
               value: "8983"
@@ -76,10 +79,11 @@ spec:
       initContainers:
         - name: volume-mount-hack
           image: giantswarm/tiny-tools
-          command: ["sh", "-c", "chown -c 8983:8983 /data"]
+          command: ["echo", "sh", "-c", "chown -c 8983:8983 /data"]
           volumeMounts:
-            - name: data
+            - name: home
               mountPath: /data
+              subPath: 234/solr-data
         - name: schema-init
           image: iqss/solr-k8s
           command: ["/scripts/schema/init.sh"]
@@ -90,11 +94,16 @@ spec:
               mountPath: "/scripts/schema/api"
               readOnly: true
       volumes:
-        - name: data
+        - name: home
           persistentVolumeClaim:
-            claimName: solr
+            claimName: home
+        - name: logs
+          emptyDir: {}
         - name: schema
           emptyDir: {}
         - name: api-secret
           secret:
             secretName: dataverse-api
+      securityContext:
+        runAsUser: 108
+        runAsGroup: 100010600

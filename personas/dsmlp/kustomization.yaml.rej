@@ -1,0 +1,16 @@
+--- personas/demo/kustomization.yaml
++++ personas/demo/kustomization.yaml
+@@ -8,10 +8,10 @@
+ 
+ resources:
+   - secrets.yaml
+-  - mailcatcher.yaml
++  #- mailcatcher.yaml
+ 
+ images:
+ 
+ patchesStrategicMerge:
+-  - configmap.yaml
+-  - patch-memory.yaml
++  #- configmap.yaml
++  #- patch-memory.yaml
