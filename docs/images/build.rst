@@ -20,7 +20,7 @@ Simple with Docker (or Podman) after cloning the project and accessing the sourc
 .. code-block:: shell
 
   docker build -t iqss/dataverse-k8s:4.20 -f docker/dataverse-k8s/glassfish/Dockerfile .
-  docker build -t iqss/solr-k8s:4.20 docker/solr-k8s
+  docker build -t ucsdets/dataverse-solr:4.20 docker/solr-k8s
 
 
 *Please remember to change the tag above as appropriate. You should be*

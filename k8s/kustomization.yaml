@@ -8,5 +8,5 @@ bases:
 images:
   - name: iqss/dataverse-k8s
     newTag: "4.20"
-  - name: iqss/solr-k8s
+  - name: ucsdets/dataverse-solr
     newTag: "4.20"

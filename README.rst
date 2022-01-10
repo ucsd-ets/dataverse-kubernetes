@@ -36,7 +36,7 @@ branch. In this branch unexpected or breaking changes may happen.
 .. |DockerHub dataverse-k8s badge| image:: https://img.shields.io/static/v1.svg?label=image&message=dataverse-k8s&logo=docker
    :target: https://hub.docker.com/r/iqss/dataverse-k8s
 .. |DockerHub solr-k8s badge| image:: https://img.shields.io/static/v1.svg?label=image&message=solr-k8s&logo=docker
-   :target: https://hub.docker.com/r/iqss/solr-k8s
+   :target: https://hub.docker.com/r/ucsdets/dataverse-solr
 .. |License badge| image:: https://img.shields.io/github/license/IQSS/dataverse-kubernetes
 .. |Docs badge| image:: https://readthedocs.org/projects/dataverse-k8s/badge/?version=latest
    :target: https://dataverse-k8s.rtfd.io/en/latest

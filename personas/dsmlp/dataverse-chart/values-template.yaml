@@ -1,0 +1,18 @@
+namespace: dataverse
+
+ingress:
+  name: dataverse-ingress
+  tls:
+    secret: tls-secret
+  host: dataverse.dsmlp.ucsd.edu
+  path: /
+  pathType: Prefix
+  service:
+    name: dataverse
+    port: 8009
+
+tls:
+  type: kubernetes.io/tls
+  name: tls-secret
+  crt: 
+  key: 

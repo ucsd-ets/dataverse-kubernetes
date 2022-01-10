@@ -107,7 +107,7 @@ Simply use Docker or other build tool again (almost like above, but different pa
 
   docker build -t iqss/dataverse-k8s:test --pull -f docker/dataverse-k8s/glassfish-dev/Dockerfile .
   docker build -t iqss/dataverse-k8s:payara-test --pull -f docker/dataverse-k8s/payara-dev/Dockerfile .
-  docker build -t iqss/solr-k8s:test docker/solr-k8s
+  docker build -t ucsdets/dataverse-solr:test docker/solr-k8s
 
 .. note:: Currently there is no Solr development image. This is likely to change.
 

@@ -11,7 +11,7 @@ services:
       - POSTGRES_PASSWORD=changeme
 
   solr:
-    image: iqss/solr-k8s
+    image: ucsdets/dataverse-solr
     expose:
       - 8983
 

@@ -34,7 +34,7 @@ When you are done with the initial deployment, you have to :doc:`bootstrap </day
   P -> P: Init database
 
   create Solr
-  User -> Solr: Deploy Solr from iqss/solr-k8s
+  User -> Solr: Deploy Solr from ucsdets/dataverse-solr
   Solr -> Solr: Init container:\nFix volume permissions\nDeploy schemas
 
   create D

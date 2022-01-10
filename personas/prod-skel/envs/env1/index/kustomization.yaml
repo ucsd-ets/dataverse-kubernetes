@@ -6,7 +6,7 @@ bases:
   - github.com/IQSS/dataverse-kubernetes/k8s/solr?ref=v4.20
 
 images:
-  - name: iqss/solr-k8s
+  - name: ucsdets/dataverse-solr
     newTag: "4.20"
 
 patchesStrategicMerge:

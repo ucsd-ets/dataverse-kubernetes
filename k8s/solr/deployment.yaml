@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: solr
-          image: iqss/solr-k8s
+          image: ucsdets/dataverse-solr
           resources:
             requests:
               memory: "2Gi"
@@ -61,7 +61,7 @@ spec:
               path: /solr/collection1/admin/ping
               port: index
         - name: schema-sidecar
-          image: iqss/solr-k8s
+          image: ucsdets/dataverse-solr
           command: ["/tini", "--", "/scripts/schema/sidecar.sh"]
           ports:
             - name: webhook
@@ -85,7 +85,7 @@ spec:
               mountPath: /data
               subPath: 234/solr-data
         - name: schema-init
-          image: iqss/solr-k8s
+          image: ucsdets/dataverse-solr
           command: ["/scripts/schema/init.sh"]
           volumeMounts:
             - name: schema
@@ -104,6 +104,6 @@ spec:
         - name: api-secret
           secret:
             secretName: dataverse-api
-      securityContext:
-        runAsUser: 108
-        runAsGroup: 100010600
+      # securityContext:
+      #   runAsUser: 108279
+      #   runAsGroup: 100010600

@@ -11,7 +11,7 @@ void setBuildStatus(String message, String state) {
 pipeline {
   agent any
   environment {
-    DOCKER_IMAGE_NAME = "iqss/solr-k8s"
+    DOCKER_IMAGE_NAME = "ucsdets/dataverse-solr"
     DOCKER_IMAGE_TAG = "build-${env.BRANCH_NAME}"
     DOCKER_WORKDIR = "docker/solr-k8s"
     DOCKER_HUB_CRED = "dockerhub-dataversebot"

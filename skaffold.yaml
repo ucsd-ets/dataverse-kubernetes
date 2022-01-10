@@ -7,7 +7,7 @@ build:
       context: .
       docker:
         dockerfile: docker/dataverse-k8s/glassfish-dev/Dockerfile
-    - image: iqss/solr-k8s
+    - image: ucsdets/dataverse-solr
       context: docker/solr-k8s
   local: {}
 deploy:
