@@ -5,6 +5,7 @@ bases:
   - postgresql
   - ../../k8s
   - ../../k8s/dataverse/jobs
+  # - ../../workflow/k8s
 
 resources:
   - secrets.yaml

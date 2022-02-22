@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-deployment
+  labels:
+    app: flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask
+  template:
+    metadata:
+      labels:
+        app: flask
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+      containers:
+      - name: server
+        image: put_image_here
+        ports:
+        - containerPort: 5000
+        env:
+          - name: FLASK_ENV
+            value: deployment
+          - name: FLASK_DEBUG
+            value: "1"
+        volumeMounts:
+        - name: config
+          mountPath: /app
+        - name: home
+          mountPath: /storage
+          subPath: 234/dataverse-data
+      volumes:
+      - name: config
+        configMap:
+          name: flask-configmap
+          items:
+            # /app
+          - key: file1.py
+            path: file1.py
+          - key: file2.py
+            path: file2.py
+            # /app/templates
+          - key: page.html
+            path: templates/page.html
+      - name: home
+        persistentVolumeClaim:
+          claimName: home

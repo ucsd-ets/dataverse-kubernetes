@@ -57,5 +57,5 @@ spec:
           persistentVolumeClaim:
             claimName: home
       securityContext:
-        runAsUser: 108
-        runAsGroup: 100010600
+        runAsUser: 1544
+        runAsGroup: 100

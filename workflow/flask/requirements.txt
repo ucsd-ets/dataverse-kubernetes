@@ -1,0 +1,5 @@
+flask==2.0.2
+requests==2.26.0
+jupyterhub==1.4.2
+Jinja2==3.0.2
+pytest==6.2.5
